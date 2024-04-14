@@ -1,8 +1,6 @@
 import React from 'react';
 import './PostStory.css';
-import { AuthContext } from '../context/AuthContext';
 import { useState } from 'react';
-import { Form } from 'react-bootstrap';
 import axios from 'axios'
 
 const PostStory = () => {
@@ -34,7 +32,7 @@ const PostStory = () => {
       formData.append('textData', textData);
   
       try {
-        const response = await axios.post('./uploads', formData, {
+        const response = await axios.post('http://localhost:3000/uploads', formData, {
           headers: {
             'Content-Type': 'multipart/form-data'
           }
@@ -46,18 +44,19 @@ const PostStory = () => {
     };
   
     return (
-      <div>
-        <h2>File and Text Upload</h2>
+      <div id="poststory">
+        <h2 class='tt'>File and Text Upload</h2>
         <form onSubmit={handleSubmit}>
-          <div>
+          <div class="lb">
             <label>Select a file:</label>
+            <br></br>
             <input type="file" onChange={handleFileChange} />
           </div>
-          <div>
-            <label>Enter text:</label>
-            <input type="text" value={textData} onChange={handleTextChange} />
+          <div class="lb">
+            <label style={{"color" : "black"}}>Enter text:</label>
+            <input id="iptext" type="text" value={textData} onChange={handleTextChange} />
           </div>
-          <button type="submit">Upload</button>
+          <button id="asb" type="submit">Upload</button>
         </form>
       </div>
     );

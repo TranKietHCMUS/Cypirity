@@ -9,8 +9,11 @@ StoryItem.propTypes = {
 function StoryItem(props) {
     const {itemData} = props;
     return (
-        <div>
-            <div class='items'>{itemData.base64Image} {itemData.story}</div>
+        <div style={{"display" : "inline-flex", "flexDirection" : "column", "marginBottom" : "90px"}}>
+            <div class='items'>
+                <img src={itemData.base64Image} width={"200px"} height={"200px"}/>
+                <p style={{"width" : "200px"}}>{itemData.story}</p>
+            </div>
         </div>
     );
 };

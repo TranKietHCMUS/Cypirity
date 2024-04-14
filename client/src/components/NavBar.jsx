@@ -24,9 +24,6 @@ export default function NavigationBar() {
                 {
                     user && (<span className='text-warning'>Logged in as {user?.name}</span>)
                 }
-                {
-                    !user && (<span className='text-warning'>Developed by TK</span>)
-                }
                 <Nav>
                     <Stack direction="horizontal" gap="3">
                         {user && (
