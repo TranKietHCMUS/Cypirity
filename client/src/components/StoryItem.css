@@ -1,0 +1,7 @@
+div.items {
+  border: 2px solid white;
+  width: 100px;
+  height: 100px;
+  margin: 50px;
+  text-align: center;
+}
